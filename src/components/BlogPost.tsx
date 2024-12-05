@@ -1,5 +1,6 @@
 import React from 'react';
 import { Clock, Calendar } from 'lucide-react';
+import { extractTextFromHtml } from '../utils/html';
 import styles from './BlogPost.module.css';
 
 interface BlogPostProps {
@@ -26,6 +27,9 @@ const BlogPost: React.FC<BlogPostProps> = ({
     year: 'numeric'
   });
 
+  const textContent = extractTextFromHtml(content);
+  const excerpt = textContent.substring(0, 150) + '...';
+
   return (
     <article className={styles.blogPost}>
       <div className={styles.imageContainer}>
@@ -43,7 +47,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
           </div>
         </div>
         <h2 className={styles.title}>{title}</h2>
-        <p className={styles.excerpt}>{content.substring(0, 150)}...</p>
+        <p className={styles.excerpt}>{excerpt}</p>
         <div className={styles.tags}>
           {tags.map((tag, index) => (
             <span key={index} className={styles.tag}>

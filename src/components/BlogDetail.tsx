@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar } from 'lucide-react';
+import { BlogContent } from './BlogContent';
 import styles from './BlogDetail.module.css';
 import { blogPosts } from './BlogList';
 
@@ -45,7 +46,7 @@ const BlogDetail: React.FC = () => {
         ))}
       </div>
       <h1 className={styles.title}>{post.title}</h1>
-      <p className={styles.content}>{post.content}</p>
+      <BlogContent content={post.content} />
     </article>
   );
 };
