@@ -1,0 +1,24 @@
+.blogList {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 640px) {
+  .blogList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blogList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blogLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
