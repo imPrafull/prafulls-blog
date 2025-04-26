@@ -8,3 +8,7 @@ export interface BlogPost {
   owner: string;
   __v: number;
 }
+
+export interface BlogPostSummary extends Omit<BlogPost, 'content'> {
+  excerpt: string;
+}

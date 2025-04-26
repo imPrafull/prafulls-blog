@@ -1,17 +1,18 @@
 import React from 'react';
 import { Clock } from 'lucide-react';
-import { BlogPost } from '../types/blog';
-import { formatDate } from '../utils/date';
+
 import { extractTextFromHtml } from '../utils/html';
+import { BlogPostSummary } from '../types/blog';
+import { formatDate } from '../utils/date';
 import styles from './BlogPost.module.css';
 
 interface BlogPostProps {
-  post: BlogPost;
+  post: BlogPostSummary;
 }
 
 const BlogPostCard: React.FC<BlogPostProps> = ({ post }) => {
-  const excerpt = extractTextFromHtml(post.content).substring(0, 150) + '...';
   const formattedDate = formatDate(post.createdAt);
+  const excerpt = extractTextFromHtml(post.excerpt) + '...';
 
   return (
     <article className={styles.blogPost}>

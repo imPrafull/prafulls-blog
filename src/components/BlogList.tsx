@@ -5,11 +5,11 @@ import Profile from './Profile';
 import { LoadingSpinner } from './LoadingSpinner';
 import { ErrorState } from './ErrorState';
 import { getBlogs } from '../services/api';
-import { BlogPost as BlogPostType } from '../types/blog';
+import { BlogPostSummary } from '../types/blog';
 import styles from './BlogList.module.css';
 
 const BlogList: React.FC = () => {
-  const [blogs, setBlogs] = useState<BlogPostType[]>([]);
+  const [blogs, setBlogs] = useState<BlogPostSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
