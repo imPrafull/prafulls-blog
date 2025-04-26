@@ -1,7 +1,7 @@
 import { BlogPost, BlogPostSummary } from '../types/blog';
 
-const API_BASE_URL = 'http://localhost:3000';
-// const API_BASE_URL = 'https://prafulls-blog-api.onrender.com';
+// const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://prafulls-blog-api.onrender.com';
 
 export async function getBlogs(): Promise<BlogPostSummary[]> {
   const response = await fetch(`${API_BASE_URL}/blogs`);
